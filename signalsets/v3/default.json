@@ -266,6 +266,10 @@
   "signals": [
     {"id": "DATSUN_AUX_PWR", "path": "Battery.Draw", "fmt": { "len": 8, "max": 25500, "mul": 100, "unit": "watts" }, "name": "Power used by auxiliary equipment (lights, radio, navigation, rear defroster, etc...)."}
   ]},
+{ "hdr": "797", "rax": "79A", "fcm1": true, "dbg": true, "cmd": {"22": "1155"}, "freq": 30,
+  "signals": [
+    {"id": "DATSUN_RANGE_DISP", "path": "Trips", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "kilometers" }, "name": "Range shown on the display", "suggestedMetric": "fuelRange"}
+  ]},
 { "hdr": "797", "rax": "79A", "fcm1": true, "dbg": true, "cmd": {"22": "1156"}, "freq": 1,
   "signals": [
     {"id": "DATSUN_GEAR", "path": "Engine", "name": "Gear", "fmt": {"len": 8, "map": {
@@ -733,11 +737,13 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "110A"}, "freq": 1,
   "signals": [
-    {"id": "DATSUN_TCM_SEC_P", "path": "Transmission", "fmt": { "len": 16, "max": 1638375, "mul": 25, "unit": "kilopascal" }, "name": "Secondary pulley pressure"}
+    {"id": "DATSUN_TCM_SEC_P",     "path": "Transmission", "fmt": { "len": 16, "max": 1638375, "mul": 25, "unit": "kilopascal" }, "name": "Secondary pulley pressure"},
+    {"id": "DATSUN_TCM_SEC_P_RAW", "path": "Transmission", "fmt": { "len": 8,  "max": 255,                "unit": "scalar"     }, "name": "Secondary pulley pressure count"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "110B"}, "freq": 1,
   "signals": [
-    {"id": "DATSUN_TCM_PRI_P", "path": "Transmission", "fmt": { "len": 16, "max": 1638375, "mul": 25, "unit": "kilopascal" }, "name": "Primary pulley pressure"}
+    {"id": "DATSUN_TCM_PRI_P",     "path": "Transmission", "fmt": { "len": 16, "max": 1638375, "mul": 25, "unit": "kilopascal" }, "name": "Primary pulley pressure"},
+    {"id": "DATSUN_TCM_PRI_P_RAW", "path": "Transmission", "fmt": { "len": 8,  "max": 255,                "unit": "scalar"     }, "name": "Primary pulley pressure count"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "110C"}, "freq": 5,
   "signals": [
